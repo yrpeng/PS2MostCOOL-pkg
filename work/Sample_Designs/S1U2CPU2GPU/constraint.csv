@@ -1,0 +1,29 @@
+Min Dimensions,EMPTY,power_trace,bonding wire pad,power_lead,signal_lead
+MinWidth,1,1,0,3.0,1
+MinLength,1,1,0,3.0,1
+MinHorExtension,1,1,0,3.0,1
+MinVerExtension,1,1,0,3.0,1
+MinHorEnclosure,EMPTY,power_trace,bonding wire pad,power_lead,signal_lead
+EMPTY,1,1,1,1,1
+power_trace,1,1,1,1,1
+bonding wire pad,1,1,1,1,1
+power_lead,1,1,1,1,1
+signal_lead,1,1,1,1,1
+MinVerEnclosure,EMPTY,power_trace,bonding wire pad,power_lead,signal_lead
+EMPTY,1,1,1,1,1
+power_trace,1,1,1,1,1
+bonding wire pad,1,1,1,1,1
+power_lead,1,1,1,1,1
+signal_lead,1,1,1,1,1
+MinHorSpacing,EMPTY,power_trace,bonding wire pad,power_lead,signal_lead
+EMPTY,1,1,1,1,1
+power_trace,1,1,1,1,1
+bonding wire pad,1,1,1,1,1
+power_lead,1,1,1,1,1
+signal_lead,1,1,1,1,1
+MinVerSpacing,EMPTY,power_trace,bonding wire pad,power_lead,signal_lead
+EMPTY,1,1,1,1,1
+power_trace,1,1,1,1,1
+bonding wire pad,1,1,1,1,1
+power_lead,1,1,1,1,1
+signal_lead,1,1,1,1,1

@@ -1,0 +1,10 @@
+Name Intel Xeon
+Type CPU
+Link https://www.intel.com/content/www/us/en/products/details/processors/xeon.html
+Footprint 100.0 70.0
+Thickness 5.0
+Material Si
+Activation_Energy 0.7
+Heatsink
+	dimensions 120.0 90.0 40.0 10.0 10 5.0
+	material Al

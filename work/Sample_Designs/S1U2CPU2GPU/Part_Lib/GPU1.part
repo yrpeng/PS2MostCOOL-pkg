@@ -1,0 +1,10 @@
+Name Intel Xeon
+Type GPU
+Link https://www.intel.com/content/www/us/en/products/details/processors/xeon.html
+Footprint 60.0 60.0
+Thickness 5.0
+Material Si
+Activation_Energy 0.7
+Heatsink
+	dimensions 100.0 80.0 40.0 10.0 12 4.0
+	material Al
