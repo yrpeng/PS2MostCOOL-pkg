@@ -1,5 +1,6 @@
-#!/bin/sh
-#pull changes from powersynth github
+#!/bin/bash
+#pull changes from powersynth github (pull origin)
+#or use it with custom commands like (reset --hard origin/dev)
 
 ThisDir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 
@@ -8,20 +9,17 @@ PSRoot=`realpath $ThisDir/../../..`
 : "${PREFIX:=$PSRoot}"
 
 if [ $# -eq 0 ]; then
-	arg="pull"
+	args=("pull" "origin")
+else
+	args=("$@") 
 fi
 
-cd "$PREFIX/pkg"
-echo "INFO: Updating" `pwd`
-git fetch && git $arg "$@"
+test -d "$PREFIX/lib/site-packages" && LibDir="$PREFIX/lib/site-packages" || LibDir=`cd "$PREFIX/lib/python3."?? && pwd`/site-packages
 
-test -d "$PREFIX/lib/site-packages" && cd "$PREFIX/lib/site-packages" || cd "$PREFIX/lib/python3."??/site-packages
-
-cd "core"
-echo "INFO: Updating" `pwd`
-git fetch && git $arg "$@"
-
-
-cd "../gui"
-echo "INFO: Updating" `pwd`
-git fetch && git $arg "$@"
+echo "INFO: Updating PSRoot at $PSRoot with source code at $LibDir."
+for repo in "$PREFIX/pkg" "$LibDir/core" "$LibDir/gui"
+do
+	echo "INFO: git ${args[@]} $repo"
+	git -C "$repo" fetch --all
+	git -C "$repo" "${args[@]}"
+done
