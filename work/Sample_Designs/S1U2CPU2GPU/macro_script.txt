@@ -1,0 +1,35 @@
+# Input scripts:
+Layout_script: ./layout_geometry_script.txt
+Layer_stack: ./layer_stack.csv
+Fig_dir: ./Figs
+Solution_dir: ./Solutions
+Constraint_file: ./constraint.csv
+Model_char: ./Characterization
+
+# Layout Generation Set up:
+Design_Type: Server
+Reliability-awareness: 0
+New: 0
+Plot_Solution: 1
+Option: 1
+Layout_Mode: 0
+
+Thermal_Setup:
+#	0 is the build in thermal model. 1 is the OpenFOAM model. 2 is the ParaPower model
+Model_Select: 1
+Measure_Name: Mean_Temperature(K)
+Selected_Devices: D1,D2,D3,D4,D5,D6,
+Device_Power: 200.0,200.0,250.0,250.0,80.0,0.0
+Ambient_Temperature: 293.15
+Heat_Convection: 95
+End_Thermal_Setup.
+
+# OpenFOAM Setup
+Test_Temperature: 298.15
+Velocity: 10.0
+Direction: LR
+TIM_Thickness: 0.0005
+TIM_Kappa: 10.0
+Number_Core: 16
+Iteration: 100
+Cabinet_Size: 620,420,50

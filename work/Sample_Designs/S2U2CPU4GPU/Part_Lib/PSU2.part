@@ -1,0 +1,7 @@
+Name Intel Xeon
+Type PSU
+Link https://www.intel.com/content/www/us/en/products/details/processors/xeon.html
+Footprint 180.0 40.0
+Thickness 70.0
+Material copper
+Activation_Energy 0.7

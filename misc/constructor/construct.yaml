@@ -1,0 +1,46 @@
+name: PowerSynth2
+version: {{ os.environ['PSVers'] }}
+company: University of Arkansas
+
+channels:
+  - http://repo.anaconda.com/pkgs/main
+  - https://conda.anaconda.org/conda-forge
+specs:
+  - python {{ os.environ['PYVers'] }}*
+  - pip
+  - git
+  - networkx
+  - joblib
+  - seaborn
+  - numpy 2.1*
+  - pandas
+  - scipy
+  - matplotlib-base
+  - pyyaml
+  - deap
+  - numba
+  - pydoe2
+  - pykrige
+  - psutil
+  - pyside6 6.5*
+  - fluidfoam
+  - numpy-stl
+  
+license_file: gpl-3.0.txt # [not unix]
+
+default_prefix: "${HOME}/PowerSynth2" # [unix]
+default_prefix: "%USERPROFILE%\\PowerSynth2" # [win]
+
+script_env_variables:
+#on windows, pure number is treated as float, needs quote
+  PYVers: {{ '"'+os.environ['PYVers']+'"' }} 
+
+  gitorigin: {{ os.environ['gitorigin'] }}
+  gitbranch: {{ '"'+os.environ['gitbranch']+'"' }}
+  gitoption: ""
+
+post_install: post_install.sh # [unix]
+post_install: post_install.bat # [win]
+
+register_python: false # [win]
+icon_image: PS2.png # [win]

@@ -1,0 +1,177 @@
+# config.yaml
+case_study:
+  name: "S2U2CPU4GPU"
+
+solver_settings:
+  iteration: 100
+  number_of_cores: 16
+
+reliability:
+  mode: 1  # 0=no reliability , 1=simple reliabilit, 2=advanced reliability
+  test_temperature: 298.15  # in Kelvin
+
+boundary_conditions:
+  inlet_temperature: 293.15  # in Kelvin
+  air_velocity: 10.0  # in m/s
+  air_direction: "LR"  # Options: LR, RL, FB, BF
+  tim_thickness: 0.0005  # in mm
+  tim_kappa: 10.0  # in W/m²·K
+  unit: "mm"    # mm, cm, m
+
+define_server:
+  pcb:
+    x: 700  # in mm
+    y: 400  # in mm
+    z: 3   # in mm
+    material: "FR4"
+  cabinet:
+    x: 720  # in mm
+    y: 420  # in mm
+    z: 90  # in mm
+
+define_components:
+  number_of_cpus: 2
+  number_of_gpus: 4
+  number_of_psus: 2
+
+cpus:
+  - id: "Intel Xeon"
+    x_location: 300.0  # X Location in mm
+    y_location: 100.0  # Y Location in mm
+    type: "Air Cooling"  # Options: "Air Cooling", "Water Cooling"
+    x_dim: 100.0  # X Dimension in mm
+    y_dim: 70.0  # Y Dimension in mm
+    z_dim: 5.0  # Z Dimension in mm
+    material: "Si"
+    power: 200.0  # Power in Watts
+    activation_energy: 0.7  # Activation Energy
+    heatsink:
+      checked: true  # Whether heatsink is enabled
+      x: 120.0  # Heatsink X in mm
+      y: 90.0  # Heatsink Y in mm
+      z: 70.0  # Heatsink Z in mm
+      tb: 10.0  # Tb parameter
+      n_fins: 10  # Number of fins
+      fin_width: 5.0  # Fin width in mm
+      material: "Al"
+      
+  - id: "Intel Xeon"
+    x_location: 300.0  # X Location in mm
+    y_location: 250.0  # Y Location in mm
+    type: "Air Cooling"  # Options: "Air Cooling", "Water Cooling"
+    x_dim: 100.0  # X Dimension in mm
+    y_dim: 70.0  # Y Dimension in mm
+    z_dim: 5.0  # Z Dimension in mm
+    material: "Si"
+    power: 200.0  # Power in Watts
+    activation_energy: 0.7  # Activation Energy
+    heatsink:
+      checked: true  # Whether heatsink is enabled
+      x: 120.0  # Heatsink X in mm
+      y: 90.0  # Heatsink Y in mm
+      z: 70.0  # Heatsink Z in mm
+      tb: 10.0  # Tb parameter
+      n_fins: 10  # Number of fins
+      fin_width: 5.0  # Fin width in mm
+      material: "Al"      
+
+gpus:
+  - id: "Nvidia A100"
+    x_location: 100.0
+    y_location: 20.0
+    type: "Air Cooling"
+    x_dim: 60.0
+    y_dim: 60.0
+    z_dim: 5.0
+    material: "Si"
+    power: 300.0
+    activation_energy: 0.7
+    heatsink:
+      checked: true
+      x: 100.0
+      y: 80.0
+      z: 70.0
+      tb: 10.0
+      n_fins: 12
+      fin_width: 4
+      material: "Al"
+
+  - id: "Nvidia A100"
+    x_location: 100.0
+    y_location: 120.0
+    type: "Air Cooling"
+    x_dim: 60.0
+    y_dim: 60.0
+    z_dim: 5.0
+    material: "Si"
+    power: 300.0
+    activation_energy: 0.7
+    heatsink:
+      checked: true
+      x: 100.0
+      y: 80.0
+      z: 70.0
+      tb: 10.0
+      n_fins: 12
+      fin_width: 4
+      material: "Al" 
+
+  - id: "Nvidia A100"
+    x_location: 100.0
+    y_location: 220.0
+    type: "Air Cooling"
+    x_dim: 60.0
+    y_dim: 60.0
+    z_dim: 5.0
+    material: "Si"
+    power: 300.0
+    activation_energy: 0.7
+    heatsink:
+      checked: true
+      x: 100.0
+      y: 80.0
+      z: 70.0
+      tb: 10.0
+      n_fins: 12
+      fin_width: 4
+      material: "Al"
+
+  - id: "Nvidia H200"
+    x_location: 100.0
+    y_location: 320.0
+    type: "Air Cooling"
+    x_dim: 60.0
+    y_dim: 60.0
+    z_dim: 5.0
+    material: "Si"
+    power: 300.0
+    activation_energy: 0.7
+    heatsink:
+      checked: true
+      x: 100.0
+      y: 80.0
+      z: 70.0
+      tb: 10.0
+      n_fins: 12
+      fin_width: 4
+      material: "Al"      
+psus:
+  - id: "PSU 100"
+    x_location: 500.0  # X Location in mm
+    y_location: 280.0  # Y Location in mm
+    x_dim: 180.0     # X Dimension in mm
+    y_dim: 40.0     # Y Dimension in mm
+    z_dim: 70.0     # Z Dimension in mm
+    material: "copper"  # Material
+    power: 100.0    # Power in Watts
+    activation_energy: 0.7  # Activation Energy
+    
+  - id: "PSU 100"
+    x_location: 500.0  # X Location in mm
+    y_location: 330.0  # Y Location in mm
+    x_dim: 180.0       # X Dimension in mm
+    y_dim: 40.0        # Y Dimension in mm
+    z_dim: 70.0        # Z Dimension in mm
+    material: "copper" # Material
+    power: 0.0         # Power in Watts
+    activation_energy: 0.7  # Activation Energy

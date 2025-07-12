@@ -1,0 +1,20 @@
+# Definition
+CPU1 ./Part_Lib/CPU1.part
+CPU2 ./Part_Lib/CPU2.part
+GPU1 ./Part_Lib/GPU1.part
+GPU2 ./Part_Lib/GPU2.part
+GPU3 ./Part_Lib/GPU3.part
+GPU4 ./Part_Lib/GPU4.part
+PSU1 ./Part_Lib/PSU1.part
+PSU2 ./Part_Lib/PSU2.part
+# Layout Information
+I1 Z+
++ T1 power 1 1 698 398
+	+ D1 CPU1 300.0 100.0
+	+ D2 CPU2 300.0 250.0
+	+ D3 GPU1 100.0 20.0
+	+ D4 GPU2 100.0 120.0
+	+ D5 GPU3 100.0 220.0
+	+ D6 GPU4 100.0 320.0
+	+ D7 PSU1 500.0 280.0
+	+ D8 PSU2 500.0 330.0
